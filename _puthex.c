@@ -23,4 +23,6 @@ void _puthex(unsigned int n, int *counter)
 	{
 		write (1, &buf[i], 1);
 	}
+
+	counter++;
 }
