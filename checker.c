@@ -14,6 +14,7 @@ void	checker(char *var, va_list args, int *counter)
 	char *s;
 	int  d;
 	int b;
+	unsigned int n;
 
 	if (*var == 'c')
 	{
@@ -36,4 +37,11 @@ void	checker(char *var, va_list args, int *counter)
 		b = va_arg(args, int);
 		_putbinery(b, counter);
 	}
+	else if (*var == 'c')
+	{
+		n = va_arg(args, unsigned int);
+		_puthex(n, counter);
+	}
+
+
 }

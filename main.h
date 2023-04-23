@@ -9,6 +9,6 @@ void	checker(char *var, va_list args, int *counter);
 void	_putstr(char *str, int *counter);
 void	_putnbr(int n, int *counter);
 void	_putbinery(int b, int *counter);
-
+void _puthex(unsigned int num, int *counter);
 
 #endif
