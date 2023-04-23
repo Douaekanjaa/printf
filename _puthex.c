@@ -11,7 +11,7 @@ void _puthex(unsigned int n, int *counter)
 	int i;
 
 	digits[17] = "0123456789abcdef";
-	buffer[8] = '\0';
+	buf[8] = '\0';
 
 	for (i = 7; i >= 0; i--)
 	{
