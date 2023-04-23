@@ -7,7 +7,7 @@
  * Return: Nothing (void).
 */
 
-void _puthex(unsigned int n, int *counter)
+void _putHEX(unsigned int n, int *counter)
 {
 	char digits[17] = "0123456789ABCDEF";
 	char buf[9];
