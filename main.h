@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 int	_printf(const char *format, ...);
-void	checker(char var, va_list args, int *counter);
+void	checker(char *var, va_list args, int *counter);
 void	_putstr(char *str, int *counter);
 void	_putnbr(int n, int *counter);
 void	_putbinery(int b, int *counter);

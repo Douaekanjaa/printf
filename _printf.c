@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			c = *format;
-			checker(c, args, &counter);
+			checker(&c, args, &counter);
 		}
 		else
 		{
@@ -34,10 +34,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (counter);
 }
-
-
-
-
-
-
-

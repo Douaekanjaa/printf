@@ -8,30 +8,30 @@
  * Return: Nothing (void).
  */
 
-void	checker(char var, va_list args, int *counter)
+void	checker(char *var, va_list args, int *counter)
 {
 	char c;
 	char *s;
 	int  d;
 	int b;
 
-	if (var == 'c')
+	if (*var == 'c')
 	{
 		c = va_arg(args, int);
 		write(1, &c, 1);
 		counter++;
 	}
-	else if	(var == 's')
+	else if	(*var == 's')
 	{
 		s = va_arg(args, char *);
 		_putstr(s, counter);
 	}
-	else if (var == 'd' || var == 'i')
+	else if (*var == 'd' || *var == 'i')
 	{
 		d = va_arg(args, int);
 		_putnbr(d, counter);
 	}
-	else if (var == 'b')
+	else if (*var == 'b')
 	{
 		b = va_arg(args, int);
 		_putbinery(b, counter);
