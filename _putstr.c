@@ -15,6 +15,4 @@ void	_putstr(char *str, int *counter)
 		(*counter)++;
 		str++;
 	}
-	write(1, "\n", 1);
-
 }
