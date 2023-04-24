@@ -6,11 +6,10 @@
 
 void _puthex(unsigned int n, int *counter)
 {
-	char digits[17];
+	char digits[17] = "0123456789abcdef";
 	char buf[9];
 	int i;
 
-	digits[17] = "0123456789abcdef";
 	buf[8] = '\0';
 
 	for (i = 7; i >= 0; i--)
