@@ -27,6 +27,11 @@ void	checker(char *var, va_list args, int *counter)
 		s = va_arg(args, char *);
 		_putstr(s, counter);
 	}
+	else if (*var == '%')
+	{
+		write(1, "%", 1);
+		counter++;
+	}
 	else if (*var == 'd' || *var == 'i')
 	{
 		d = va_arg(args, int);

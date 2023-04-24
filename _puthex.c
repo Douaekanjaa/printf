@@ -1,7 +1,10 @@
 #include "main.h"
 
 /**
-  *
+ * _puthex - convertes from dec to hex in lowcase.
+ * @n: giving number.
+ * @counter: pointer to couter.
+ * Return: Nothing (void).
 */
 
 void _puthex(unsigned int n, int *counter)
@@ -20,7 +23,7 @@ void _puthex(unsigned int n, int *counter)
 
 	for (i = 0; i < 8; i++)
 	{
-		write (1, &buf[i], 1);
+		write(1, &buf[i], 1);
 	}
 
 	counter++;
