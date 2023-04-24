@@ -18,7 +18,13 @@ void	checker(char *var, va_list args, int *counter)
 	if (*var == 'c')
 		c = va_arg(args, int), write(1, &c, 1), (*counter)++;
 	else if	(*var == 's')
-		s = va_arg(args, char *), _putstr(s, counter);
+	{
+		s = va_arg(args, char *);
+		if (s == NULL)
+			_putstr("(null)", counter);
+		else
+			_putstr("(null)", counter);
+	}
 	else if (*var == '%')
 		write(1, "%", 1), (*counter)++;
 	else if (*var == 'd' || *var == 'i')
