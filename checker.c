@@ -23,7 +23,7 @@ void	checker(char *var, va_list args, int *counter)
 		if (s == NULL)
 			_putstr("(null)", counter);
 		else
-			_putstr("(null)", counter);
+			_putstr(s, counter);
 	}
 	else if (*var == '%')
 		write(1, "%", 1), (*counter)++;
