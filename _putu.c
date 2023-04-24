@@ -12,18 +12,16 @@
 
 void _putu(unsigned int n, int base, int *counter)
 {
-	char buf [20];
+	char buf[20];
 	int digit;
 	int i;
 	int len = 0;
 
-	do
-	{
+	do {
 		digit = n % base;
 		buf[len++] = '0' + digit;
 		n /= base;
-	}
-	while (n > 0);
+	} while (n > 0);
 
 	for (i = len - 1; i >= 0; i--)
 	{
