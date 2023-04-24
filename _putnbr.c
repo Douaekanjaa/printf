@@ -20,4 +20,5 @@ void	_putnbr(int n, int *counter)
 	c = (n % 10) + '0';
 	write(1, &c, 1);
 	counter++;
+	write(1, "\n", 1);
 }

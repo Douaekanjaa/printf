@@ -52,6 +52,5 @@ void	checker(char *var, va_list args, int *counter)
 		n = va_arg(args, unsigned int);
 		_putHEX(n, counter);
 	}
-
 }
 
