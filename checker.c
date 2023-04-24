@@ -12,57 +12,25 @@ void	checker(char *var, va_list args, int *counter)
 {
 	char c;
 	char *s;
-	int  d;
-	int b;
+	int  d, b;
 	unsigned int n;
 
 	if (*var == 'c')
-	{
-		c = va_arg(args, int);
-		write(1, &c, 1);
-		(*counter)++;
-	}
+		c = va_arg(args, int), write(1, &c, 1), (*counter)++;
 	else if	(*var == 's')
-	{
-		s = va_arg(args, char *);
-		_putstr(s, counter);
-	}
+		s = va_arg(args, char *), _putstr(s, counter);
 	else if (*var == '%')
-	{
-		write(1, "%", 1);
-		(*counter)++;
-	}
+		write(1, "%", 1), (*counter)++;
 	else if (*var == 'd' || *var == 'i')
-	{
-		d = va_arg(args, int);
-		_putnbr(d, counter);
-	}
+		d = va_arg(args, int), _putnbr(d, counter);
 	else if (*var == 'b')
-	{
-		b = va_arg(args, int);
-		_putbinery(b, counter);
-	}
+		b = va_arg(args, int), _putbinery(b, counter);
 	else if (*var == 'x')
-	{
-		n = va_arg(args, unsigned int);
-		_puthex(n, counter);
-	}
+		n = va_arg(args, unsigned int), _puthex(n, counter);
 	else if (*var == 'X')
-	{
-		n = va_arg(args, unsigned int);
-		_putHEX(n, counter);
-	}
+		n = va_arg(args, unsigned int), _putHEX(n, counter);
 	else if (*var == 'u')
-	{
-		n = va_arg(args, unsigned int);
-		_putu(n, 10, counter);
-	}
+		n = va_arg(args, unsigned int), _putu(n, 10, counter);
 	else
-	{
-		write(1, "%", 1);
-		write(1, var, 1);
-		(*counter)++;
-	}
+		write(1, "%", 1), write(1, var, 1), (*counter)++;
 }
-
-
