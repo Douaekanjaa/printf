@@ -20,7 +20,7 @@ void	checker(char *var, va_list args, int *counter)
 	{
 		c = va_arg(args, int);
 		write(1, &c, 1);
-		counter++;
+		(*counter)++;
 	}
 	else if	(*var == 's')
 	{
@@ -30,7 +30,7 @@ void	checker(char *var, va_list args, int *counter)
 	else if (*var == '%')
 	{
 		write(1, "%", 1);
-		counter++;
+		(*counter)++;
 	}
 	else if (*var == 'd' || *var == 'i')
 	{
@@ -57,7 +57,12 @@ void	checker(char *var, va_list args, int *counter)
 		n = va_arg(args, unsigned int);
 		_putu(n, 10, counter);
 	}
+	else
+	{
+		write(1, "%", 1);
+		write(1, var, 1);
+		(*counter)++;
+	}
 }
 
-}
 
