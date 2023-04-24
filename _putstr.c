@@ -12,7 +12,7 @@ void	_putstr(char *str, int *counter)
 	while (*str != '\0')
 	{
 		write(1, str, 1);
-		counter++;
+		(*counter)++;
 		str++;
 	}
 	write(1, "\n", 1);

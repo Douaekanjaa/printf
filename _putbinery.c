@@ -14,7 +14,7 @@ void	_putbinery(int b, int *counter)
 	{
 		_putbinery(b / 2, counter);
 		write(1, &array[b % 2], 1);
-		counter++;
+		(*counter)++;
 	}
 	write(1, "\n", 1);
 }

@@ -28,7 +28,7 @@ void _putu(unsigned int n, int base, int *counter)
 		write(1, &buf[i], 1);
 	}
 
-	counter++;
+	(*counter)++;
 }
 
 

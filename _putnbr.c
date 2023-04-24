@@ -19,6 +19,6 @@ void	_putnbr(int n, int *counter)
 		_putnbr(n / 10, counter);
 	c = (n % 10) + '0';
 	write(1, &c, 1);
-	counter++;
+	(*counter)++;
 	write(1, "\n", 1);
 }
