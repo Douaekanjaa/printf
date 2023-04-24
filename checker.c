@@ -52,5 +52,12 @@ void	checker(char *var, va_list args, int *counter)
 		n = va_arg(args, unsigned int);
 		_putHEX(n, counter);
 	}
+	else if (*var == 'u')
+	{
+		n = va_arg(args, unsigned int);
+		_putu(n, 10, counter);
+	}
+}
+
 }
 
