@@ -12,7 +12,6 @@ void _putstr(char *str, int *counter);
 void _putu(unsigned int n, int base, int *counter);
 void _putoct(unsigned int num, int *res);
 void _puthex(unsigned int n, int *counter);
-
 int handles_s(va_list args, int *res);
 void _putHEX(unsigned int n, int *counter);
 void    _putbinery(int b, int *counter);
