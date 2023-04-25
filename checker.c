@@ -46,6 +46,14 @@ int	checker(const char *format, va_list args, int *i)
 		num = va_arg(args, int), _putbinery(num, &res), res++;
 		break;
 	case 'o':
+		num = va_arg(args, unsigned int);
+		if (num == 0)
+			_putchar('0'), res++;
+		else
+			_putoct(num, &res);
+		break;
+	case 'u':
+
 
 	default:
 		_putchar(format[*i]), res++;
