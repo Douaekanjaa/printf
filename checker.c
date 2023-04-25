@@ -53,7 +53,11 @@ int	checker(const char *format, va_list args, int *i)
 			_putoct(num, &res);
 		break;
 	case 'u':
-
+		num = va_arg(args, unsigned int);
+		if (num == 0)
+			_putchar('0'), res++;
+		else
+			_putu(num, &res);
 
 	default:
 		_putchar(format[*i]), res++;
