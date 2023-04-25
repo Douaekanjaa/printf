@@ -8,17 +8,29 @@
  */
 int	_putnbr(int nb, int *counter)
 {
-	long int nbr = nb;
-
-	if (nbr < 0)
+	if (nb == -2147483648)
 	{
 		_putchar('-');
-		nbr *= (-1);
+		_putchar('2');
+		*counter +=2;
+		_putnbr(147483648, counter);
+		return (0);
 	}
-	if (nbr > 0)
+	else if (nb < 0)
 	{
-		_putnbr(nbr / 10, counter);
-		_putchar((nbr % 10) + '0');
+		_putchar('-');
+		*counter += 1;
+		nb *= (-1);
+	}
+	if (nb >= 10)
+	{
+		_putnbr(nb / 10, counter);
+		_putchar((nb % 10) + '0');
+		*counter += 1;
+	}
+	else if (nb < 10)
+	{
+		_putchar(nb + '0');
 		*counter += 1;
 	}
 	return (0);
