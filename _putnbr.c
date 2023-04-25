@@ -2,25 +2,24 @@
 
 /**
  * _putnbr - prints numbers.
- * @n: giving number.
+ * @nb: giving number.
  * @counter: counter.
- * Return: Nothing (void)
+ * Return: 0.
  */
-void	_putnbr(int number, int *res)
+int	_putnbr(int nb, int *counter)
 {
-	long int nb = number;
-	if (nb < 0)
+	long int nbr = nb;
+
+	if (nbr < 0)
 	{
 		_putchar('-');
-		nb = -nb;
-		_putnbr(nb, res);
-		res++;
+		nbr *= (-1);
 	}
-	else if (nb > 9)
+	if (nbr > 0)
 	{
-		_putnbr((nb / 10), res);
-		_putnbr((nb % 10), res);
+		_putnbr(nbr / 10, counter);
+		_putchar((nbr % 10) + '0');
+		*counter += 1;
 	}
-	else
-		 _putchar(nb + 48), res++;
+	return (0);
 }

@@ -12,6 +12,7 @@ int	checker(const char *format, va_list args, int *i)
 {
 	char *s, *null = "(null)";
 	int res = 0, k = 0, j = 0;
+	int num;
 
 	switch (*(format + *i + 1))
 	{
@@ -23,27 +24,23 @@ int	checker(const char *format, va_list args, int *i)
 		if (s == NULL)
 		{
 			while (*(null + k) != '\0')
-			{
-				_putchar(*(null + k));
-				res++;
-				k++;
-			}
+				_putchar(*(null + k)), res++, k++;
 		}
 		else
 		{
 			while (s[j] != '\0')
-			{
-				_putchar(s[j]);
-				res++;
-				j++;
-			}
+				_putchar(s[j]), res++, j++;
 		}
 		break;
 	case '%':
 		_putchar(format[*i]), res++;
 		break;
 	case 'd': case 'i':
-		_putnbr(va_arg(args, int), &res);
+		num = va_arg(args, int);
+		if (num == 0)
+			_putchar('0'), res++;
+		else
+			_putnbr(num, &res);
 		break;
 	default:
 		_putchar(format[*i]), res++;
