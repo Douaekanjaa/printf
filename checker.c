@@ -44,12 +44,15 @@ int	checker(const char *format, va_list args, int *i)
 		break;
 	case 'b':
 		num = va_arg(args, int), _putbinery(num, &res), res++;
+		break;
+	case 'o':
+
 	default:
 		_putchar(format[*i]), res++;
 		*i -= 1;
 		break;
 	}
+
 	*i += 1;
-	printf("Hello");
 	return (res);
 }
