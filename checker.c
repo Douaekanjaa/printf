@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * checker - checks wich character cames after the %.
  * @format: character to be ckecked.
@@ -7,7 +6,6 @@
  * @i: character string.
  * Return: the number of characters printed.
  */
-
 int	checker(const char *format, va_list args, int *i)
 {
 	char *s, *null = "(null)";
@@ -45,28 +43,10 @@ int	checker(const char *format, va_list args, int *i)
 	case 'b':
 		num = va_arg(args, int), _putbinery(num, &res), res++;
 		break;
-	case 'o':
-		num = va_arg(args, unsigned int);
-		if (num == 0)
-			_putchar('0'), res++;
-		else
-			_putoct(num, &res);
-		break;
-	case 'u':
-		num = va_arg(args, unsigned int);
-		if (num == 0)
-			_putchar('0'), res++;
-		else
-			_putu(num, &res);
-	case 'S':
-		handle_s(args, &res);
-		break;
 	default:
-		_putchar(format[*i]), res++;
-		*i -= 1;
+		_putchar(format[*i]), res++, *i -= 1;
 		break;
 	}
-
 	*i += 1;
 	return (res);
 }
