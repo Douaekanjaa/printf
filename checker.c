@@ -59,31 +59,7 @@ int	checker(const char *format, va_list args, int *i)
 		else
 			_putu(num, &res);
 	case 'S':
-		s = va_arg(args, char *);
-		if (s == NULL)
-		{
-			while (*(null + k) != '\0')
-			{
-				_putchar(*(nill + k), res++, k++;
-			}
-		}
-		else
-		{
-			while (s[j] != '\0')
-			{
-				if (s[j] < 32 || s[j] >= 127)
-				{
-					_putchar('\\'), _putchar('x');
-					if (s[j] < 16)
-						_putchar('0');
-					res += 3;
-					res += _puthex(s[j], 1);
-				}
-				else
-					_putchar(s[j]), res++;
-				j++;
-			}
-		}
+		handle_s(args, &res);
 		break;
 	default:
 		_putchar(format[*i]), res++;
