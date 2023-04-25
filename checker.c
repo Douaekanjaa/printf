@@ -42,6 +42,8 @@ int	checker(const char *format, va_list args, int *i)
 		else
 			_putnbr(num, &res);
 		break;
+	case 'b':
+		num = va_arg(args, int), _putbinery(num, &res), res++;
 	default:
 		_putchar(format[*i]), res++;
 		*i -= 1;

@@ -13,8 +13,7 @@ void	_putbinery(int b, int *counter)
 	if (b > 0)
 	{
 		_putbinery(b / 2, counter);
-		write(1, &array[b % 2], 1);
-		(*counter)++;
+		_putchar(array[b % 2]);
+		*counter += 1;
 	}
-	write(1, "\n", 1);
 }
