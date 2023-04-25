@@ -12,7 +12,7 @@ int	_putnbr(int nb, int *counter)
 	{
 		_putchar('-');
 		_putchar('2');
-		*counter +=2;
+		*counter += 2;
 		_putnbr(147483648, counter);
 		return (0);
 	}
