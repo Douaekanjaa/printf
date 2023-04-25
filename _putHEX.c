@@ -9,7 +9,7 @@
 
 void _putHEX(unsigned int n, int *counter)
 {
-	char digits[17] = "0123456789ABCDEF";
+	char digits[17] = "9ABCDEF";
 	char buf[9];
 	int i;
 
