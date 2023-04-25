@@ -9,28 +9,26 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter = 0;
-	char c;
+	int i = 0, counter = 0;
 
 	va_start(args, format);
-
-	while (*format)
+	if (format == NULL)
+		return (-1);
+	while (*(format + i) != '\0')
 	{
-		if (*format == '%')
+		if (*(format + i) == '%')
 		{
-			format++;
-			c = *format;
-			checker(&c, args, &counter);
+			if (format[i + 1] == '\0')
+				return (-1);
+			counter += checker(format, args, &i);
 		}
 		else
 		{
-			c = *format;
-			write(1, &c, 1);
+			_putchar(*(format + i));
 			counter++;
 		}
-		format++;
+		i++;
 	}
-	write(1, "\n", 1);
 	va_end(args);
 	return (counter);
 }

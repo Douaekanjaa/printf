@@ -8,35 +8,48 @@
  * Return: Nothing (void).
  */
 
-void	checker(char *var, va_list args, int *counter)
+int	checker(const char *format, va_list args, int *i)
 {
-	char c;
-	char *s;
-	int  d, b;
-	unsigned int n;
+	char *s, *null = "(null)";
+	int res = 0, k = 0, j = 0;
 
-	if (*var == 'c')
-		c = va_arg(args, int), write(1, &c, 1), (*counter)++;
-	else if	(*var == 's')
+	switch (*(format + *i + 1))
 	{
+	case 'c':
+		_putchar(va_arg(args, int));
+		res++;
+		break;
+	case 's':
 		s = va_arg(args, char *);
 		if (s == NULL)
-			_putstr("(null)", counter);
+		{
+			while (*(null + k) != '\0')
+			{
+				_putchar(*(null + k));
+				res++;
+				k++;
+			}
+		}
 		else
-			_putstr(s, counter);
+		{
+			while (s[j] != '\0')
+			{
+				_putchar(s[j]);
+				res++;
+				j++;
+			}
+		}
+		break;
+	case '%':
+		_putchar(format[*i]);
+		res++;
+		break;
+	default:
+		_putchar(format[*i]);
+		res++;
+		*i -= 1;
+		break;
 	}
-	else if (*var == '%')
-		write(1, "%", 1), (*counter)++;
-	else if (*var == 'd' || *var == 'i')
-		d = va_arg(args, int), _putnbr(d, counter);
-	else if (*var == 'b')
-		b = va_arg(args, int), _putbinery(b, counter);
-	else if (*var == 'x')
-		n = va_arg(args, unsigned int), _puthex(n, counter);
-	else if (*var == 'X')
-		n = va_arg(args, unsigned int), _putHEX(n, counter);
-	else if (*var == 'u')
-		n = va_arg(args, unsigned int), _putu(n, 10, counter);
-	else
-		write(1, "%", 1), write(1, var, 1), (*counter)++;
+	*i += 1;
+	return (res);
 }
