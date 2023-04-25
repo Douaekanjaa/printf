@@ -27,6 +27,5 @@ void _puthex(unsigned int n, int *counter)
 	}
 	(*counter)++;
 	write(1, "\n", 1);
-	
 }
 

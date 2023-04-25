@@ -1,9 +1,9 @@
 #include "main.h"
- 
+
 /**
-  * _putoctal - Converts a decimal number to an octal number
-  * @n: the decimal number to be converted
-  * @counter: A pointer
+  * _putoct - Converts a decimal number to an octal number
+  * @num: the decimal number to be converted
+  * @res: A pointer
   * Return: nothing
 */
 
