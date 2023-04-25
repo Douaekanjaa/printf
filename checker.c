@@ -50,5 +50,6 @@ int	checker(const char *format, va_list args, int *i)
 		break;
 	}
 	*i += 1;
+	printf("Hello");
 	return (res);
 }
