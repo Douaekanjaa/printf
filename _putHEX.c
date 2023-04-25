@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _puthex - convertes from dec to hex in lowcase.
+ * _putHEX - convertes from dec to hex in lowcase.
  * @n: giving number.
  * @counter: pointer to couter.
  * Return: Nothing (void).

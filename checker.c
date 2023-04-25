@@ -2,10 +2,10 @@
 
 /**
  * checker - checks wich character cames after the %.
- * @var: the character to be checked.
- * @args: from format.
- * @counter: counter.
- * Return: Nothing (void).
+ * @format: character to be ckecked.
+ * @args: character string.
+ * @i: character string.
+ * Return: the number of characters printed.
  */
 
 int	checker(const char *format, va_list args, int *i)
@@ -16,8 +16,7 @@ int	checker(const char *format, va_list args, int *i)
 	switch (*(format + *i + 1))
 	{
 	case 'c':
-		_putchar(va_arg(args, int));
-		res++;
+		_putchar(va_arg(args, int)), res++;
 		break;
 	case 's':
 		s = va_arg(args, char *);
@@ -41,12 +40,10 @@ int	checker(const char *format, va_list args, int *i)
 		}
 		break;
 	case '%':
-		_putchar(format[*i]);
-		res++;
+		_putchar(format[*i]), res++;
 		break;
 	default:
-		_putchar(format[*i]);
-		res++;
+		_putchar(format[*i]), res++;
 		*i -= 1;
 		break;
 	}
