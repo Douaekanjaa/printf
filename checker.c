@@ -42,6 +42,9 @@ int	checker(const char *format, va_list args, int *i)
 	case '%':
 		_putchar(format[*i]), res++;
 		break;
+	case 'd': case 'i':
+		_putnbr(va_arg(args, int)), res++;
+		break;
 	default:
 		_putchar(format[*i]), res++;
 		*i -= 1;
