@@ -7,5 +7,6 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int checker(const char *format, va_list args, int *i);
+void    _putnbr(int number, int *res);
 
 #endif

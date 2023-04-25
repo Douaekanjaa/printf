@@ -6,17 +6,21 @@
  * @counter: counter.
  * Return: Nothing (void)
  */
-void	_putnbr(va_list args)
+void	_putnbr(int number, int *res)
 {
-	int number = va_arg(args, int); 
-	char c;
-	if (number < 0)
+	long int nb = number;
+	if (nb < 0)
 	{
-		write(1, "-", 1);
-		number = -number;
+		_putchar('-');
+		nb = -nb;
+		_putnbr(nb, res);
+		res++;
 	}
-	if (number >= 10)
-		_putnbr(number / 10);
-	c = (number % 10) + '0';
-	write(1, &c, 1);
+	else if (nb > 9)
+	{
+		_putnbr((nb / 10), res);
+		_putnbr((nb % 10), res);
+	}
+	else
+		 _putchar(nb + 48), res++;
 }
