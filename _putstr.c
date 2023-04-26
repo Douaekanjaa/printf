@@ -7,12 +7,26 @@
  * Return: Nothing (void).
  */
 
-void	_putstr(char *str, int *counter)
+int	_putstr(char *str)
 {
-	while (*str != '\0')
+	int i = 0, res = 0;
+	char *null = "(null)";
+
+	if (str == NULL)
 	{
-		write(1, str, 1);
-		(*counter)++;
-		str++;
+		for (; *(null + i) != '\0'; i++)
+		{
+			_putchar(*(null + i));
+			res++;
+		}
 	}
+	else
+	{
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+			res++;
+		}
+	}
+	return (res);
 }

@@ -8,7 +8,7 @@
  */
 int	checker(const char *format, va_list args, int *i)
 {
-	char *s, *null = "(null)";
+	char *str, *null = "(null)";
 	int res = 0, k = 0, j = 0;
 	int num;
 
@@ -18,17 +18,8 @@ int	checker(const char *format, va_list args, int *i)
 		_putchar(va_arg(args, int)), res++;
 		break;
 	case 's':
-		s = va_arg(args, char *);
-		if (s == NULL)
-		{
-			while (*(null + k) != '\0')
-				_putchar(*(null + k)), res++, k++;
-		}
-		else
-		{
-			while (s[j] != '\0')
-				_putchar(s[j]), res++, j++;
-		}
+		str = va_arg(args, char *);
+		res += _putstr(str);
 		break;
 	case '%':
 		_putchar(format[*i]), res++;
