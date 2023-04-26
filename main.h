@@ -16,5 +16,6 @@ int handles_s(va_list args, int *res);
 void _putHEX(unsigned int n, int *counter);
 void    _putbinery(int b, int *counter);
 int _reversed(va_list args);
+int _strlen(const char *s);
 
 #endif
