@@ -17,8 +17,7 @@ int	checker(const char *format, va_list args, int *i)
 		_putchar(va_arg(args, int)), res++;
 		break;
 	case 's':
-		str = va_arg(args, char *);
-		res += _putstr(str);
+		str = va_arg(args, char *), res += _putstr(str);
 		break;
 	case '%':
 		_putchar(format[*i]), res++;
