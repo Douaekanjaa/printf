@@ -8,9 +8,8 @@
  */
 int	checker(const char *format, va_list args, int *i)
 {
-	char *str, *null = "(null)";
-	int res = 0, k = 0, j = 0;
-	int num;
+	char *str;
+	int res = 0, num;
 
 	switch (*(format + *i + 1))
 	{
