@@ -12,6 +12,6 @@ int _reversed(va_list args)
 	for (i = len - 1; i >= 0; i--)
 		_putchar(s[i]);
 
-	return len;
+	return (len);
 }
 

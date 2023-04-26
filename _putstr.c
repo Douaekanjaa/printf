@@ -3,8 +3,7 @@
 /**
  * _putstr - prints string.
  * @str: pointer to string.
- * @counter: counter.
- * Return: Nothing (void).
+ * Return: Nothing res
  */
 
 int	_putstr(char *str)
