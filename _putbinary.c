@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _putbinery - converts decimal to binery.
+ * _putbinary - converts decimal to binery.
  * @counter: counter.
- * @b: number to be converted.
+ * @number: number to be converted.
  * Return: Nothing (void).
  */
 int	_putbinary(int number, int *counter)
