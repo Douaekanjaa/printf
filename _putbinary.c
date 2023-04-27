@@ -6,19 +6,28 @@
  * @number: number to be converted.
  * Return: Nothing (void).
  */
-int	_putbinary(int number, int *counter)
+int	_putbinary(unsigned int number, int *counter)
 {
-	int bin = 0, base = 1;
+	unsigned int array[64];
+	int i = 0, j;
 
 	if (number == 0)
-		(*counter)++;
-	if (number != 0)
 	{
-		bin += (number % 2) * base;
-		base *= 10;
-		number /= 2;
+		_putchar('0');
+		(*counter)++;
+		return (0);
+	}
+
+	while (number > 0)
+	{
+		array[i] = number & 1;
+		number = number >> 1;
+		i++;
+	}
+	for (j = i -1; j >= 0; j--)
+	{
+		_printf("%d", array[j]);
 		(*counter)++;
 	}
-	_printf("%d", bin);
 	return (0);
 }

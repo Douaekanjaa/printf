@@ -15,6 +15,7 @@ int main(void)
 
 	len_1 = printf("%b\n", 0);
 	len_2 = _printf("%b\n", 0);
+	printf("%d    %d\n", len_1, len_2);
 	assert(len_1 == len_2);
     printf("%d\n", len_1);
     printf("%d\n", len_2);

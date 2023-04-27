@@ -30,7 +30,7 @@ int	checker(const char *format, va_list args, int *i)
 			_putnbr(num, &res);
 		break;
 	case 'b':
-		num = va_arg(args, int), _putbinary(num, &res);
+		_putbinary(va_arg(args, unsigned int), &res);
 		break;
 	default:
 		_putchar(format[*i]), res++, *i -= 1;
