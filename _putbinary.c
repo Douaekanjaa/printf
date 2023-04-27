@@ -24,7 +24,7 @@ int	_putbinary(unsigned int number, int *counter)
 		number = number >> 1;
 		i++;
 	}
-	for (j = i -1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		_printf("%d", array[j]);
 		(*counter)++;
