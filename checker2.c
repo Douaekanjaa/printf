@@ -32,7 +32,7 @@ int checker2(const char *format, va_list args, int *i)
 			break;
 
 		default:
-			_putchar(format[*i]), res++, *i -=1;
+			_putchar(format[*i]), res++, *i -= 1;
 			break;
 	}
 	*i += 1;
