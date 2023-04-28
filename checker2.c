@@ -12,7 +12,7 @@ int checker2(const char *format, va_list args, int *i)
 	char *str;
 	int res = 0, num;
 	int unsigned n;
-	unsigned int u;
+	int unsigned u;
 
 	switch (*(format + *i))
 	{
