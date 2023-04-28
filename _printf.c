@@ -16,23 +16,11 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*(format + i) != '\0')
 	{
-		if (*(format + i) == 'c' || *(format + i) == 's' || *(format + i) == '%'
-				|| *(format + i) == 'd' || *(format + i) == 'i')
+		if (*(format + i) == '%')
 		{
-			if (*(format + i) == '%')
-			{
-				if ((*format + i + 1) == '\0')
-				{
-					return (-1);
-				}
-				counter += checker(format, args, &i);
-			}
-		}
-		else if (*(format + i) == 'u' || *(format + i) == 'o')
-		{
-			if (*(format + i + 1) == '\0')
-					return (-1);
-			counter += checker2(format, args, &i);
+			if (format[i + 1] == '\0')
+				return (-1);
+			counter += checker(format, args, &i);
 		}
 		else
 		{
