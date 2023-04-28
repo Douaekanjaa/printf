@@ -11,21 +11,24 @@
 
 int main(void)
 {
-    	int len_1, len_2;
+	int len1;
 
-	len_1 = printf("%b\n", 0);
-	len_2 = _printf("%b\n", 0);
-	printf("%d    %d\n", len_1, len_2);
-	assert(len_1 == len_2);
-    printf("%d\n", len_1);
-    printf("%d\n", len_2);
-	len_2 = printf("%b\n", 255);
-	len_1 = _printf("%b\n", 255);
-	assert(len_1 == len_2);
-    printf("%d\n", len_1);
-    printf("%d\n", len_2);
-	len_1 = printf("%b\n", UINT_MAX);
-	len_2 = _printf("%b\n", UINT_MAX);
-	assert(len_1 == len_2);
+	char str1[] = "Hello, world!";
+	/* char str2[] = "";
+	char *str3 = NULL;*/
+
+
+	len1 = _reversed(str1);
+	_printf("\nLenght of str1: %d\n", len1);
+	
+	/*len2 = _reversed(str2);
+    	_printf("\nLength of str2: %d\n", len2);
+	printf("\nLength of str2: %d\n", len2);*/
+
+    	/* len3 = _reversed(str3);
+    	printf("\nLength of str3: %d\n", len3);
+	printf("\nLength of str3: %d\n", len3);*/
+
+
     return (0);
 }

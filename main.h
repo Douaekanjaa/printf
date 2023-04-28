@@ -21,8 +21,6 @@ void _putHEX(unsigned int n, int *counter);
 
 int    _putbinary(unsigned int number, int *counter);
 
-int _reversed(va_list args);
-
 int _strlen(const char *s);
 
 #endif

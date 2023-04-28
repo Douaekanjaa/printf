@@ -28,10 +28,9 @@ int _printf(const char *format, ...)
 				counter += checker(format, args, &i);
 			}
 		}
-		else if (*(format + i) == 'u' || *(format + i) == 'x' || *(format + i) == 'X'
-		|| *(format + i) == 'o')
+		else if (*(format + i) == 'u' || *(format + i) == 'o')
 		{
-			if (*(format + i + 1) == '\0'
+			if (*(format + i + 1) == '\0')
 					return (-1);
 			counter += checker2(format, args, &i);
 		}

@@ -12,13 +12,14 @@ int checker2(const char *format, va_list args, int *i)
 	char *str;
 	int res = 0, num;
 	int unsigned n;
+	unsigned int u;
 
-	switch (*(format + *u))
+	switch (*(format + *i))
 	{
 		case 'u':
 			num = va_arg(args, unsigned int);
 			if (num == 0)
-				_putchar('0'), &res++;
+				_putchar('0'), res++;
 			else
 				_putu(num, 10, &res);
 			break;
@@ -29,6 +30,7 @@ int checker2(const char *format, va_list args, int *i)
 			else
 				_putoct(n, &res);
 			break;
+
 		default:
 			_putchar(format[*i]), res++, *i -=1;
 			break;
